@@ -1,0 +1,1 @@
+Alternative Sync is only enabled for PAL titles when Hawk is older than 2.5.
