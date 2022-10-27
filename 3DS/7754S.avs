@@ -1,6 +1,7 @@
-vid = AVISource("SMB2.avi").DelayAudio(3.7*4481136.0/268111856)
+vid = AVISource("SMB2.avi").Amplify(0.70).DelayAudio(3.7*4481136.0/268111856)
 cw = vid.Width / 10
 ch = vid.Height / 2
+borders = vid.Height / 96
 
 a = vid.trim(0,567)
 b = vid.trim(568,797)
@@ -233,3 +234,4 @@ s = s.crop(0, 0, -0, -ch).PointResize(800,480).AddBorders(160, 0, 160, 0)
 beta = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p + q + r + s
 
 alpha + beta
+last.AddBorders(0, borders, 0, borders)
