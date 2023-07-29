@@ -1,5 +1,9 @@
-Backups of my [Published/Reencoded](https://tasvideos.org/Activity/Publishers/Spikestuff) stuff
+Backups of my [Published/Reencoded](https://tasvideos.org/Activity/Publishers/Spikestuff) stuff.
 
-Numbering formats will be following the SUBMISSION NUMBER, and will hopefully be followed by gamename.
+Mainly hosting the pain-in-the-ass scripts being the systems listed above.
 
-It'll be seperated by console, then by emulator.
+Other Publisher/Encoder scripts will also be provided if I remember to haggle them. :^)
+
+Numbering formats will be following the SUBMISSION NUMBER, which follows the Game Name.
+
+If needed it will be seperated by console, then emulator.
