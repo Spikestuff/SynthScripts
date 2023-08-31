@@ -1,14 +1,6 @@
-sub = "8463S.ass"
-
 Open("8463S.avi") + Open("8463S_1.avi") + Open("8463S_2.avi") + Open("8463S_3.avi") + Open("8463S_4.avi") + Open("8463S_5.avi")
 function Open(string FileName) {AVISource(FileName)
 last.height == 480 ? ConvertToYV24().yadifmod2(order=0, field=-1, mode=0).ConvertToRGB32() : 0
-
-#PointResize(last.Width*2,last.Height*2).LanczosResize(640,480)
-#PointResize(last.Width*4,last.Height*4).LanczosResize(1440,1080)
-
-#PointResize(last.Width*10,last.Height*10).LanczosResize(2880,2160)
-PointResize(last.Width*20,last.Height*20).LanczosResize(5760,4320)
 }
 vid = last
 
@@ -44,21 +36,4 @@ j = j.FreezeFrame(295,295,294).FreezeFrame(383,383,382).FreezeFrame(455,455,454)
 
 k = k.FreezeFrame(330,330,329).FreezeFrame(344,344,343).FreezeFrame(354,354,353).FreezeFrame(364,364,363).FreezeFrame(374,374,373).FreezeFrame(384,384,383).FreezeFrame(394,394,393).FreezeFrame(404,404,403).FreezeFrame(414,414,413).FreezeFrame(430,430,429).FreezeFrame(440,440,439).FreezeFrame(450,450,449).FreezeFrame(460,460,459).FreezeFrame(470,470,469).FreezeFrame(480,480,479).FreezeFrame(490,490,489).FreezeFrame(500,500,499).FreezeFrame(516,516,515).FreezeFrame(527,527,526).FreezeFrame(537,537,536).FreezeFrame(548,548,547).FreezeFrame(558,558,557).FreezeFrame(568,568,567).FreezeFrame(578,578,577).FreezeFrame(602,602,601).FreezeFrame(612,612,611).FreezeFrame(622,622,621).FreezeFrame(632,632,631).FreezeFrame(642,642,641).FreezeFrame(652,652,651)
 
-sourcevideo = a + b + c + d + e + f + g + h + i + j + k
-
-Logo = ImageSource("RephasedGvorhttps.png", start=0, end=int((sourcevideo.FrameRate * 2)), fps=sourcevideo.FrameRate)
-Logo = Logo.Spline36Resize(Logo.Width * sourcevideo.Height / Logo.Height, sourcevideo.Height)
-BorderSize = (Logo.Width < sourcevideo.Width) ? Int((sourcevideo.Width - Logo.Width) / 2) : 0
-Logo = (BorderSize > 0) ? Logo.AddBorders(BorderSize, 0, BorderSize, 0, $FFFFFF) : Logo
-Logo = Logo.Spline36Resize(sourcevideo.Width, sourcevideo.Height).ConvertToRGB32().AssumeFPS(sourcevideo.FrameRateNumerator, sourcevideo.FrameRateDenominator)
-
-logoa = BlankClip(logo, audio_rate=sourcevideo.AudioRate, channels=sourcevideo.AudioChannels)
-logob = AudioDub(logo, logoa)
-
-#Dissolve(Greyscale(logob), sourcevideo.TextSubMod(sub), 30)
-Dissolve(logob, sourcevideo.assrender(sub), 30)
-
-ConvertToYV24(chromaresample="point", matrix="Rec709")
-ConvertToYV12(chromaresample="lanczos", matrix="Rec709")
-
-last
+a + b + c + d + e + f + g + h + i + j + k
